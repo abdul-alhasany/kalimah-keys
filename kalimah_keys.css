@@ -1,0 +1,753 @@
+body {
+    font: 71%/1.5 Verdana, Sans-Serif;
+    background: #eee;
+}
+.clearfix:after {
+    content: ".";
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix { display: block }
+/*html[xmlns] .clearfix { display: block }*/
+* html .clearfix { height: 1% }
+.kalimah-keys {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+.kalimah-keys .kalimah-keys-keyboard {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	display: none;
+}
+.kalimah-keys .kalimah-keys-row {
+    clear: both;
+    margin: 0;
+    position: relative;
+    padding: 0;
+}
+.kalimah-keys .kalimah-keys-key {
+    float: left;
+    text-align: center;
+    list-style: none;
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.kalimah-keys .kalimah-keys-alt-keylist,
+.kalimah-keys .kalimah-keys-alt-keylist-remove {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.kalimah-keys .kalimah-keys-key.caps { text-transform: uppercase }
+.kalimah-keys .kalimah-keys-key .keyTop {
+    height: auto;
+    left: 5px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+}
+.kalimah-keys .kalimah-keys-key .altKey {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.kalimah-keys .kalimah-keys-key .hide { display: none }
+.kalimah-keys .kalimah-keys-alt {
+    position: absolute;
+    width: auto;
+    z-index: 2;
+    padding: 0;
+}
+.kalimah-keys .kalimah-alt-textarea {
+    float: left;
+    font-size: 14px;
+    height: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 98%;
+}
+.kalimah-keys .kalimah-alt-input {
+    float: left !important;
+    font-size: 14px !important;
+    height: 40px !important;
+    margin-bottom: 10px !important;
+    position: relative !important;
+    width: 98% !important;
+}
+.keyboard-inner-wrap {
+    float: left;
+    position: relative;
+}
+.kalimah-keys .kalimah-keyboard-icon {
+    background: url("keyboard-icon.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 16px;
+    left: 5px;
+    position: relative;
+    width: 30px;
+    cursor: pointer;
+}
+.default .kalimah-keys-keyboard {
+    background-color: #D7D7D7;
+    border-radius: 5px;
+    padding: 5px;
+}
+.default .kalimah-msg-box {
+    background-color: #FFF8C4;
+    border: 1px solid #F2C779;
+    border-radius: 10px;
+    color: #555555;
+    display: none;
+    font-family: Tahoma,Geneva,Arial,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    left: 50%;
+    padding: 14px 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 50%;
+    z-index: 10;
+}
+.default .kalimah-keys-key {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #F9F9F9;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 5px 5px 0;
+    text-align: center;
+    width: 40px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.default .kalimah-keys-key:last-child { margin: 0 }
+.default .kalimah-keys-key:hover,
+.default .kalimah-keys-key-hover {
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+}
+.default .capsLock,
+.default .tab,
+.default .left-shift { clear: left }
+.default .tab,
+.default .backSpace { width: 70px }
+.default .capsLock { width: 80px }
+.default .return { width: 75px }
+.default .left-shift { width: 95px }
+.default .right-shift { width: 109px }
+.default .uppercase { text-transform: uppercase }
+.default .space {
+    clear: left;
+    width: 683px;
+}
+.default .kalimah-keys-alt {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    max-width: 120px;
+    padding: 3px;
+    position: absolute;
+    width: auto;
+    z-index: 2;
+}
+.default .kalimah-keys-alt .kalimah-keys-alt-keylist {
+    /*background: none repeat scroll 0 0 #FFFFFF;*/
+    cursor: pointer;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    list-style: none outside none;
+    text-align: center;
+    width: 40px;
+}
+.default .kalimah-keys-alt-keylist:hover {
+    background: none repeat scroll 0 0 #CFCECE;
+    color: #FFFFFF;
+}
+.default .kalimah-keys-alt-keylist-remove {
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid #000;*/
+    background: #fff;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    list-style: none;
+    float: left;
+    text-align: center;
+    content: "X";
+    background-color: red;
+    color: white;
+}
+.default .kalimah-field-wrapper {
+    clear: both;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.default .active {
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+}
+.default .blank { visibility: hidden }
+.ipad .kalimah-keys-keyboard {
+    background: #9c9ba6; /* Old browsers */
+    background: -moz-linear-gradient(top, #9c9ba6 0%, #57575f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9c9ba6), color-stop(100%,#57575f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #9c9ba6 0%,#57575f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #9c9ba6 0%,#57575f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #9c9ba6 0%,#57575f 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #9c9ba6 0%,#57575f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c9ba6', endColorstr='#57575f',GradientType=0 ); /* IE6-9 */
+    margin: 0;
+    padding: 5px;
+    box-shadow: inset 0 1px 0 #bfbfbf;
+    border-top: 1px solid #303236;
+    border-radius: 0 0 5px 5px;
+}
+.ipad .kalimah-msg-box {
+    background-color: #FFF8C4;
+    border: 1px solid #F2C779;
+    border-radius: 10px;
+    color: #555555;
+    display: none;
+    font-family: Tahoma,Geneva,Arial,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    left: 50%;
+    padding: 14px 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 50%;
+    z-index: 10;
+}
+.ipad .kalimah-keys-key {
+    background: #eeeef0; /* Old browsers */
+    background: -moz-linear-gradient(top, #eeeef0 0%, #d3d3d9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeef0), color-stop(100%,#d3d3d9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #eeeef0 0%,#d3d3d9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #eeeef0 0%,#d3d3d9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #eeeef0 0%,#d3d3d9 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #eeeef0 0%,#d3d3d9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeef0', endColorstr='#d3d3d9',GradientType=0 ); /* IE6-9 */
+    margin: 0 8px 10px 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font: 12px sans-serif;
+    text-shadow: 0 1px 0 #fff;
+    line-height: 40px;
+    display: inline-block;
+    border: 1px solid #58575e;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.25), inset 0 -2px 0 rgba(0,0,0,0.25), inset 0 1px 0 #fff;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+.ipad .kalimah-keys-key:last-child { margin: 0 }
+.ipad .kalimah-keys-key:hover,
+.ipad .kalimah-keys-key-hover,
+.ipad .active {
+    background: rgb(202,202,206); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(202,202,206,1) 0%, rgba(169,169,170,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(202,202,206,1)), color-stop(100%,rgba(169,169,170,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(202,202,206,1) 0%,rgba(169,169,170,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(202,202,206,1) 0%,rgba(169,169,170,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(202,202,206,1) 0%,rgba(169,169,170,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(202,202,206,1) 0%,rgba(169,169,170,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cacace', endColorstr='#a9a9aa',GradientType=0 ); /* IE6-9 */
+}
+.ipad .capsLock,
+.ipad .tab,
+.ipad .left-shift { clear: left }
+.ipad .tab,
+.ipad .backSpace { width: 65px }
+.ipad .capsLock { width: 80px }
+.ipad .return { width: 75px }
+.ipad .left-shift { width: 95px }
+.ipad .right-shift { width: 109px }
+.ipad .uppercase { text-transform: uppercase }
+.ipad .space {
+    clear: left;
+    width: 715px;
+}
+.ipad .kalimah-keys-alt {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    max-width: 120px;
+    padding: 3px;
+    position: absolute;
+    width: auto;
+    z-index: 2;
+}
+.ipad .kalimah-keys-alt .kalimah-keys-alt-keylist {
+    /*background: none repeat scroll 0 0 #FFFFFF;*/
+    cursor: pointer;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    list-style: none outside none;
+    text-align: center;
+    width: 40px;
+}
+.ipad .kalimah-keys-alt-keylist:hover {
+    background: none repeat scroll 0 0 #CFCECE;
+    color: #FFFFFF;
+}
+.ipad .kalimah-keys-alt-keylist-remove {
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid #000;*/
+    background: #fff;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    list-style: none;
+    float: left;
+    text-align: center;
+    content: " X ";
+    background-color: red;
+    color: white;
+}
+.ipad .kalimah-field-wrapper {
+    clear: both;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.ipad .active { box-shadow: none }
+.ipad .blank { visibility: hidden }
+.mobile .keyboard-inner-wrap {
+    /*left: 0 !important;;
+    margin-left: 0 !important;*/
+}
+.mobile .kalimah-keys-keyboard {
+    background: #9c9ba6; /* Old browsers */
+    background: -moz-linear-gradient(top, #9c9ba6 0%, #57575f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9c9ba6), color-stop(100%,#57575f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #9c9ba6 0%,#57575f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #9c9ba6 0%,#57575f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #9c9ba6 0%,#57575f 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #9c9ba6 0%,#57575f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9c9ba6', endColorstr='#57575f',GradientType=0 ); /* IE6-9 */
+    margin: 0;
+    padding: 5px;
+    box-shadow: inset 0 1px 0 #bfbfbf;
+    border-top: 1px solid #303236;
+    border-radius: 0 0 5px 5px;
+}
+.mobile .kalimah-msg-box {
+    background-color: #FFF8C4;
+    border: 1px solid #F2C779;
+    border-radius: 10px;
+    color: #555555;
+    display: none;
+    font-family: Tahoma,Geneva,Arial,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    left: 50%;
+    padding: 14px 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 50%;
+    z-index: 10;
+}
+.mobile .kalimah-keys-key {
+    background: #eeeef0; /* Old browsers */
+    background: -moz-linear-gradient(top, #eeeef0 0%, #d3d3d9 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eeeef0), color-stop(100%,#d3d3d9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #eeeef0 0%,#d3d3d9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #eeeef0 0%,#d3d3d9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #eeeef0 0%,#d3d3d9 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #eeeef0 0%,#d3d3d9 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeef0', endColorstr='#d3d3d9',GradientType=0 ); /* IE6-9 */
+    margin: 0 0 5px;
+    width: 25px;
+    height: 40px;
+    text-align: center;
+    font: 12px sans-serif;
+    text-shadow: 0 1px 0 #fff;
+    line-height: 40px;
+    display: inline-block;
+    border: 1px solid #58575e;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.25), inset 0 -2px 0 rgba(0,0,0,0.25), inset 0 1px 0 #fff;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+.mobile .kalimah-keys-key:last-child { margin: 0 }
+.mobile .kalimah-keys-key:hover,
+.mobile .kalimah-keys-key-hover,
+.mobile .active {
+    background: rgb(202,202,206); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(202,202,206,1) 0%, rgba(169,169,170,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(202,202,206,1)), color-stop(100%,rgba(169,169,170,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(202,202,206,1) 0%,rgba(169,169,170,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(202,202,206,1) 0%,rgba(169,169,170,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(202,202,206,1) 0%,rgba(169,169,170,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(202,202,206,1) 0%,rgba(169,169,170,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cacace', endColorstr='#a9a9aa',GradientType=0 ); /* IE6-9 */
+}
+.mobile .capsLock,
+.mobile .tab,
+.mobile .left-shift { clear: left }
+.mobile .tab,
+.mobile .backSpace { width: 45px }
+.mobile .capsLock {
+    font-size: 12px;
+    width: 36px;
+}
+.mobile .return {
+    font-size: 12px;
+    width: 33px;
+}
+.mobile .left-shift {
+    font-size: 12px;
+    width: 45px;
+}
+.mobile .right-shift {
+    font-size: 12px;
+    width: 50px;
+}
+.mobile .uppercase { text-transform: uppercase }
+.mobile .space {
+    clear: left;
+    width: 314px;
+}
+.mobile .kalimah-keys-alt {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    max-width: 120px;
+    padding: 3px;
+    position: absolute;
+    width: auto;
+    z-index: 2;
+}
+.mobile .kalimah-keys-alt .kalimah-keys-alt-keylist {
+    /*background: none repeat scroll 0 0 #FFFFFF;*/
+    cursor: pointer;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    list-style: none outside none;
+    text-align: center;
+    width: 40px;
+}
+.mobile .kalimah-keys-alt-keylist:hover {
+    background: none repeat scroll 0 0 #CFCECE;
+    color: #FFFFFF;
+}
+.mobile .kalimah-keys-alt-keylist-remove {
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid #000;*/
+    background: #fff;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    list-style: none;
+    float: left;
+    text-align: center;
+    content: " X ";
+    background-color: red;
+    color: white;
+}
+.mobile .kalimah-field-wrapper {
+    clear: both;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.mobile .active { box-shadow: none }
+.mobile .blank { visibility: hidden }
+.apple .kalimah-keys-keyboard {
+    margin: 15px auto 0;
+    background: #d5d9dc  url('keyboard-background.jpg') repeat-x;
+    -moz-border-radius-topleft: 7px 21px;
+    -moz-border-radius-topright: 7px 21px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 7px 21px;
+    border-top-right-radius: 7px 21px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 10px;
+    -webkit-box-shadow: inset 0 0 8px #bbb, 0 1px 0 #aaa, 0 4px 0 #bbb, 0 10px 30px #ddd;
+    -moz-box-shadow: inset 0 0 8px #bbb, 0 1px 0 #aaa, 0 4px 0 #bbb, 0 10px 30px #ddd;
+    box-shadow: inset 0 0 8px #bbb, 0 1px 0 #aaa, 0 4px 0 #bbb, 0 10px 30px #ddd;
+}
+.apple .kalimah-msg-box {
+    background-color: #FFF8C4;
+    border: 1px solid #F2C779;
+    border-radius: 10px;
+    color: #555555;
+    display: none;
+    font-family: Tahoma,Geneva,Arial,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    left: 50%;
+    padding: 14px 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 50%;
+    z-index: 10;
+}
+.apple .kalimah-keys-key {
+    display: block;
+    color: #aaa;
+    font: bold 9pt arial;
+    text-decoration: none;
+    text-align: center;
+    width: 44px;
+    height: 41px;
+    margin: 5px;
+    background: #eff0f2;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border-top: 1px solid #f5f5f5;
+    -webkit-box-shadow: inset 0 0 25px #e8e8e8, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9, 0 2px 3px #333;
+    -moz-box-shadow: inset 0 0 25px #e8e8e8, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9, 0 2px 3px #333;
+    box-shadow: inset 0 0 25px #e8e8e8, 0 1px 0 #c3c3c3, 0 2px 0 #c9c9c9, 0 2px 3px #333;
+    text-shadow: 0px 1px 0px #f5f5f5;
+    line-height: 40px;
+    cursor: pointer;
+}
+.apple .kalimah-keys-key:last-child { margin-right: 0 }
+.apple .kalimah-keys-key:hover,
+.apple .kalimah-keys-key-hover,
+.apple .active { }
+.apple .capsLock,
+.apple .tab,
+.apple .left-shift { clear: left }
+.apple .tab,
+.apple .backSpace { width: 68px }
+.apple .capsLock { width: 95px }
+.apple .return { width: 70px }
+.apple .left-shift { width: 110px }
+.apple .right-shift { width: 110px }
+.apple .uppercase { text-transform: uppercase }
+.apple .space {
+    clear: left;
+    width: 770px;
+}
+.apple .kalimah-keys-alt {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    max-width: 120px;
+    padding: 3px;
+    position: absolute;
+    width: auto;
+    z-index: 2;
+}
+.apple .kalimah-keys-alt .kalimah-keys-alt-keylist {
+    /*background: none repeat scroll 0 0 #FFFFFF;*/
+    cursor: pointer;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    list-style: none outside none;
+    text-align: center;
+    width: 40px;
+}
+.apple .kalimah-keys-alt-keylist:hover {
+    background: none repeat scroll 0 0 #CFCECE;
+    color: #FFFFFF;
+}
+.apple .kalimah-keys-alt-keylist-remove {
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid #000;*/
+    background: #fff;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    list-style: none;
+    float: left;
+    text-align: center;
+    content: " X ";
+    background-color: red;
+    color: white;
+}
+.apple .kalimah-field-wrapper {
+    clear: both;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.apple .active {
+    color: #888;
+    background: #ebeced;
+    margin: 7px 5px 3px;
+    -webkit-box-shadow: inset 0 0 25px #ddd, 0 0 3px #333;
+    -moz-box-shadow: inset 0 0 25px #ddd, 0 0 3px #333;
+    box-shadow: inset 0 0 25px #ddd, 0 0 3px #333;
+    border-top: 1px solid #eee;
+}
+.apple .blank { visibility: hidden }
+.iphone .kalimah-keys-keyboard {
+    background: linear-gradient(#9098A3, #454F5D) repeat scroll 0 0 #757D8A;
+    border-top: 1px solid #3A3D42;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    padding: 5px;
+}
+.iphone .kalimah-msg-box {
+    background-color: #FFF8C4;
+    border: 1px solid #F2C779;
+    border-radius: 10px;
+    color: #555555;
+    display: none;
+    font-family: Tahoma,Geneva,Arial,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    height: auto;
+    left: 50%;
+    padding: 14px 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 50%;
+    z-index: 10;
+}
+.iphone .kalimah-keys-key {
+    display: block;
+    width: 44px;
+    height: 41px;
+    margin: 5px;
+    text-shadow: 0px 1px 0px #f5f5f5;
+    line-height: 40px;
+    cursor: pointer;
+    color: #000000;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    padding: 0.02em 0 0.03em;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: linear-gradient(#F8F8F9, #DDDFE1) repeat scroll 0 0 #ECEDEF;
+    border-color: rgba(255, 255, 255, 0.45) -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-radius: 4px;
+    border-right: 0 none;
+    border-style: solid none none;
+    border-width: 1px 0 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7), 0 1px 0 rgba(0, 0, 0, 0.3);
+    color: #3A3D42;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 1px #FFFFFF;
+}
+.iphone .kalimah-keys-key:last-child { margin-right: 0 }
+.iphone .kalimah-keys-key:hover,
+.iphone .kalimah-keys-key-hover,
+.iphone .active { }
+.iphone .capsLock,
+.iphone .tab,
+.iphone .left-shift { clear: left }
+.iphone .tab,
+.iphone .backSpace { width: 68px }
+.iphone .capsLock { width: 95px }
+.iphone .return { width: 70px }
+.iphone .left-shift { width: 110px }
+.iphone .right-shift { width: 110px }
+.iphone .uppercase { text-transform: uppercase }
+.iphone .space {
+    clear: left;
+    width: 770px;
+}
+.iphone .backSpace { font-size: 13px }
+.iphone .capsLock,
+.iphone .tab,
+.iphone .left-shift,
+.iphone .tab,
+.iphone .backSpace,
+.iphone .capsLock,
+.iphone .return,
+.iphone .right-shift,
+.iphone .space {
+    background: linear-gradient(#7F8792, #535B68) repeat scroll 0 0 #757D8A;
+    color: white;
+    text-shadow: none;
+}
+.iphone .kalimah-keys-alt {
+    background-color: #EEEEEE;
+    border-radius: 5px;
+    max-width: 120px;
+    padding: 3px;
+    position: absolute;
+    width: auto;
+    z-index: 2;
+    float: left;
+}
+.iphone .kalimah-keys-alt .kalimah-keys-alt-keylist {
+    /*background: none repeat scroll 0 0 #FFFFFF;*/
+    cursor: pointer;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    list-style: none outside none;
+    text-align: center;
+    width: 40px;
+}
+.iphone .kalimah-keys-alt-keylist:hover {
+    background: none repeat scroll 0 0 #CFCECE;
+    color: #FFFFFF;
+}
+.iphone .kalimah-keys-alt-keylist-remove {
+    width: 40px;
+    height: 40px;
+    /*border: 1px solid #000;*/
+    background: #fff;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    list-style: none;
+    float: left;
+    text-align: center;
+    content: " X ";
+    background-color: red;
+    color: white;
+}
+.iphone .kalimah-field-wrapper {
+    clear: both;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+.iphone .active { background-image: linear-gradient(#E2E3E4, #AAADB4) }
+.iphone .blank { visibility: hidden }

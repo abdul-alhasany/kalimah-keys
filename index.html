@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ar" lang="ar">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+	<title>Online Keyboard</title>
+	
+	<link rel="stylesheet" type="text/css" href="kalimah_keys.css" />
+	<script type="text/Javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/Javascript" src="keyboards.js"></script>
+	<script type="text/Javascript" src="jquery.kalimah_keys.js"></script>
+	
+		<script type="text/Javascript">
+		$(function () {
+		/*	$.fn.KalimahKeys.applyAction('changeSettings', '#write', {keyboard_layout: $.keyboards.keypad,
+					input_method: "mouse", keyboard_location: "bottom", style: "apple"});
+					
+		*/
+			var keyboard = $("#write, #writing, input").KalimahKeys({
+				keyboard_layout: $.keyboards.qwerty,
+				input_method: "mouse",
+				disable_original_input: false,
+				hide_alt_keys: false,
+				style: "ipad",
+				keyboard_location: "input",
+				enable_keypress: true
+			});
+
+			keyboard.applyAction('changeSettings', '#write, #writing', {
+				keyboard_layout: $.keyboards.keypad,
+				input_method: "mouse",
+				keyboard_location: "bottom",
+				style: "apple",
+				disable_original_input: false,
+				show_on_icon_click: false
+			});
+
+			keyboard.applyAction('changeStyle', '#writing', '.space, .left-shift', {
+				"width": "100px"
+			});
+			
+			keyboard.init();
+			
+			$(document).on('keyboardOpened', function (e, test)
+			{
+				console.log(test);
+			})
+		})
+		</script>
+</head>
+<body>
+
+<div id="containera">
+	<textarea id="write" rows="6" cols="60"></textarea><br><br><br><br>
+	First name: <input type="text" name="firstname"><br>
+	Last name: <input type="text" name="lastname"><br><br><br>
+	<textarea id="writing" rows="6" cols="60"></textarea><br><br><br><br>
+	</div>
+</body>
+</html>
